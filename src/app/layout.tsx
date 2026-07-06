@@ -43,6 +43,29 @@ export default function RootLayout({
       className={`${syne.variable} ${plusJakarta.variable} scroll-smooth`}
     >
       <body className="bg-[#040206] text-[#f8fafc] antialiased min-h-screen selection:bg-amber-500 selection:text-black">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Khushboo Kumari",
+              "jobTitle": "Frontend Developer",
+              "url": "https://khushboo-portfolio.vercel.app",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Noida",
+                "addressRegion": "Uttar Pradesh",
+                "addressCountry": "India"
+              },
+              "email": "khushboosoni6746@gmail.com",
+              "telephone": "+918168648574",
+              "sameAs": [
+                "https://www.linkedin.com/in/khushboo-kumari-988a71269"
+              ]
+            })
+          }}
+        />
         {children}
       </body>
     </html>

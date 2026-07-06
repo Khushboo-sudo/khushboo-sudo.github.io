@@ -70,7 +70,7 @@ export default function About() {
               className="pt-4"
             >
               <Button
-                href="/docs/Khushboo Kumari - Resume.pdf"
+                href="/docs/Khushboo_Kumari_Resume.pdf"
                 download="Khushboo_Kumari_Resume.pdf"
                 variant="primary"
                 className="inline-flex items-center gap-2"

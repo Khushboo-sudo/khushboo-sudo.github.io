@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Mail, Copy, Check } from "lucide-react";
+import Image from "next/image";
 import GradientText from "../ui/GradientText";
 
 export default function Footer() {
@@ -21,11 +22,19 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-400 via-yellow-500 to-amber-500 flex items-center justify-center font-bold text-sm text-black">
-              KK
+          <div className="flex items-center gap-3 mb-3">
+            <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-gradient-to-tr from-amber-300 to-amber-500 p-[1px]">
+              <div className="w-full h-full bg-[#0c0a12] rounded-lg flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/logo.png"
+                  alt="Khushboo Logo"
+                  width={32}
+                  height={32}
+                  className="object-cover scale-110"
+                />
+              </div>
             </div>
-            <span className="font-bold tracking-wider text-white">KHUSHBOO.DEV</span>
+            <span className="font-bold tracking-wider text-white">KHUSHBOO</span>
           </div>
           <p className="text-slate-400 text-sm max-w-sm">
             Building high-performance, visually stunning, and SEO-friendly user interfaces.

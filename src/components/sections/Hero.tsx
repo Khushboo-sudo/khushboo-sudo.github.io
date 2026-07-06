@@ -85,7 +85,7 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-1.5 text-xs text-slate-500">
               <Terminal className="w-3.5 h-3.5 text-amber-500/70" />
-              <span>developer_profile.ts — khushboo.dev</span>
+              <span>developer_profile.ts — khushboo</span>
             </div>
             <div className="w-14" /> {/* Spacer */}
           </div>

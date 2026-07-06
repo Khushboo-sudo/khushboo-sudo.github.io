@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Button from "../ui/Button";
 
 const NAV_ITEMS = [
@@ -48,12 +49,20 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-300 via-yellow-500 to-amber-500 flex items-center justify-center font-bold text-lg text-black shadow-lg shadow-amber-500/20 group-hover:rotate-12 transition-transform duration-300">
-            KK
+        <a href="#home" className="flex items-center gap-3 group" aria-label="Khushboo Kumari Portfolio Home">
+          <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-gradient-to-tr from-amber-300 to-amber-500 p-[1px] shadow-lg shadow-amber-500/10 group-hover:rotate-6 transition-transform duration-300">
+            <div className="w-full h-full bg-[#0c0a12] rounded-xl flex items-center justify-center overflow-hidden">
+              <Image
+                src="/logo.png"
+                alt="Khushboo Logo"
+                width={40}
+                height={40}
+                className="object-cover scale-110"
+              />
+            </div>
           </div>
           <span className="font-bold text-lg tracking-wider text-white group-hover:text-amber-400 transition-colors duration-300">
-            KHUSHBOO.DEV
+            KHUSHBOO
           </span>
         </a>
 
@@ -85,7 +94,7 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden md:flex">
-          <Button href="/docs/Khushboo Kumari - Resume.pdf" download="Khushboo_Kumari_Resume.pdf" variant="glow" className="text-xs py-2 px-5">
+          <Button href="/docs/Khushboo_Kumari_Resume.pdf" download="Khushboo_Kumari_Resume.pdf" variant="glow" className="text-xs py-2 px-5">
             Download CV <ArrowUpRight className="w-3.5 h-3.5" />
           </Button>
         </div>
@@ -126,7 +135,7 @@ export default function Navbar() {
               ))}
             </div>
             <Button
-              href="/docs/Khushboo Kumari - Resume.pdf"
+              href="/docs/Khushboo_Kumari_Resume.pdf"
               download="Khushboo_Kumari_Resume.pdf"
               variant="primary"
               className="w-full justify-center"
