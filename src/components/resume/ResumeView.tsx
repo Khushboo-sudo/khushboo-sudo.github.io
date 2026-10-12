@@ -366,10 +366,23 @@ export default function ResumeView({ isModal = false, onClose }: ResumeViewProps
 
           {/* Pick A Pro */}
           <div className="mb-2 break-inside-avoid">
-            <div className="flex justify-between items-baseline mb-0.5">
-              <span className="text-[13px] font-bold text-[#0f172a]">
+            <div className="flex justify-between items-baseline mb-0.5 flex-wrap gap-1">
+              <a
+                href="https://pickapro.co.nz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[13px] font-bold text-[#0f172a] hover:text-[#1d4ed8] hover:underline"
+              >
                 Pick A Pro – On-Demand Marketplace Ecosystem
-              </span>
+              </a>
+              <a
+                href="https://pickapro.co.nz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10.5px] font-semibold text-[#1d4ed8] hover:underline shrink-0"
+              >
+                pickapro.co.nz ↗
+              </a>
             </div>
             <div className="font-mono text-[10px] text-[#0369a1] bg-[#f0f9ff] border border-[#bae6fd] px-1.5 py-0.5 rounded inline-block mb-1">
               React.js · Next.js · React Native · Redux Toolkit · Firebase Auth &amp; FCM · Google Maps API
@@ -389,10 +402,23 @@ export default function ResumeView({ isModal = false, onClose }: ResumeViewProps
 
           {/* PropertyWorks */}
           <div className="mb-2 break-inside-avoid">
-            <div className="flex justify-between items-baseline mb-0.5">
-              <span className="text-[13px] font-bold text-[#0f172a]">
+            <div className="flex justify-between items-baseline mb-0.5 flex-wrap gap-1">
+              <a
+                href="https://propertyworks.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[13px] font-bold text-[#0f172a] hover:text-[#1d4ed8] hover:underline"
+              >
                 PropertyWorks – Real Estate Intelligence &amp; Advisory Platform
-              </span>
+              </a>
+              <a
+                href="https://propertyworks.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10.5px] font-semibold text-[#1d4ed8] hover:underline shrink-0"
+              >
+                propertyworks.in ↗
+              </a>
             </div>
             <div className="font-mono text-[10px] text-[#0369a1] bg-[#f0f9ff] border border-[#bae6fd] px-1.5 py-0.5 rounded inline-block mb-1">
               React.js · Next.js · TypeScript · Tailwind CSS · Node.js · REST APIs · SEO
@@ -409,10 +435,23 @@ export default function ResumeView({ isModal = false, onClose }: ResumeViewProps
 
           {/* Memory Caravan */}
           <div className="mb-2 break-inside-avoid">
-            <div className="flex justify-between items-baseline mb-0.5">
-              <span className="text-[13px] font-bold text-[#0f172a]">
+            <div className="flex justify-between items-baseline mb-0.5 flex-wrap gap-1">
+              <a
+                href="https://memory-caravan.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[13px] font-bold text-[#0f172a] hover:text-[#1d4ed8] hover:underline"
+              >
                 Memory Caravan – QR-Based Digital Media &amp; Keepsake Platform
-              </span>
+              </a>
+              <a
+                href="https://memory-caravan.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10.5px] font-semibold text-[#1d4ed8] hover:underline shrink-0"
+              >
+                memory-caravan.onrender.com ↗
+              </a>
             </div>
             <div className="font-mono text-[10px] text-[#0369a1] bg-[#f0f9ff] border border-[#bae6fd] px-1.5 py-0.5 rounded inline-block mb-1">
               Next.js · React · TypeScript · Supabase · Cloudflare R2 · Video Streaming · QR Routing
@@ -429,10 +468,23 @@ export default function ResumeView({ isModal = false, onClose }: ResumeViewProps
 
           {/* Grasberg International */}
           <div className="mb-2 break-inside-avoid">
-            <div className="flex justify-between items-baseline mb-0.5">
-              <span className="text-[13px] font-bold text-[#0f172a]">
+            <div className="flex justify-between items-baseline mb-0.5 flex-wrap gap-1">
+              <a
+                href="https://grasberginternational.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[13px] font-bold text-[#0f172a] hover:text-[#1d4ed8] hover:underline"
+              >
                 Grasberg International – Forex Platform &amp; Role-Based CRM
-              </span>
+              </a>
+              <a
+                href="https://grasberginternational.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10.5px] font-semibold text-[#1d4ed8] hover:underline shrink-0"
+              >
+                grasberginternational.com ↗
+              </a>
             </div>
             <div className="font-mono text-[10px] text-[#0369a1] bg-[#f0f9ff] border border-[#bae6fd] px-1.5 py-0.5 rounded inline-block mb-1">
               Next.js · Tailwind CSS · REST APIs · MetaTrader 5 (MT5) · Role-Based CRM
@@ -449,10 +501,23 @@ export default function ResumeView({ isModal = false, onClose }: ResumeViewProps
 
           {/* SPODS Technologies */}
           <div className="mb-1 break-inside-avoid">
-            <div className="flex justify-between items-baseline mb-0.5">
-              <span className="text-[13px] font-bold text-[#0f172a]">
+            <div className="flex justify-between items-baseline mb-0.5 flex-wrap gap-1">
+              <a
+                href="https://www.spodstechnologies.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[13px] font-bold text-[#0f172a] hover:text-[#1d4ed8] hover:underline"
+              >
                 SPODS Technologies – Corporate Brand &amp; Services Platform
-              </span>
+              </a>
+              <a
+                href="https://www.spodstechnologies.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10.5px] font-semibold text-[#1d4ed8] hover:underline shrink-0"
+              >
+                spodstechnologies.com ↗
+              </a>
             </div>
             <div className="font-mono text-[10px] text-[#0369a1] bg-[#f0f9ff] border border-[#bae6fd] px-1.5 py-0.5 rounded inline-block mb-1">
               React.js · Next.js · Tailwind CSS · TypeScript · REST APIs
