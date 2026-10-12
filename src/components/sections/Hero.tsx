@@ -52,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg md:text-xl text-slate-300 max-w-2xl mb-12 font-light leading-relaxed"
         >
-          Frontend Developer with <span className="text-amber-400 font-semibold">3+ years</span> of expertise in building high-performance web applications using <span className="text-white font-semibold">React.js</span> & <span className="text-white font-semibold">Next.js</span>. Skilled in crafting state-of-the-art interactive user experiences.
+          Full-Stack Developer with <span className="text-amber-400 font-semibold">3+ years</span> of experience building responsive and scalable web applications using <span className="text-white font-semibold">React.js</span>, <span className="text-white font-semibold">Next.js</span>, <span className="text-white font-semibold">Node.js</span>, and <span className="text-white font-semibold">Express.js</span>. Skilled in REST API integration, reusable component architectures, authentication, and performance optimisation.
         </motion.p>
 
         {/* Actions */}
@@ -60,13 +60,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md mb-20"
+          className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-xl mb-20"
         >
-          <Button href="#projects" variant="primary" className="w-full sm:w-auto px-8">
+          <Button href="#projects" variant="primary" className="w-full sm:w-auto px-7">
             Explore My Work <Code2 className="w-4 h-4" />
           </Button>
-          <Button href="#contact" variant="secondary" className="w-full sm:w-auto px-8">
-            Get in Touch <ArrowUpRight className="w-4 h-4" />
+          <Button href="/Khushboo_Kumari_Resume.pdf" download="Khushboo_Kumari_Resume.pdf" variant="secondary" className="w-full sm:w-auto px-7">
+            Download Resume <ArrowUpRight className="w-4 h-4" />
+          </Button>
+          <Button href="/resume" variant="secondary" className="w-full sm:w-auto px-7 border-amber-500/20 text-amber-200 hover:text-white">
+            Online CV <Sparkles className="w-4 h-4 text-amber-400" />
           </Button>
         </motion.div>
 
@@ -97,22 +100,25 @@ export default function Hero() {
               name: <span className="text-emerald-300">&apos;Khushboo Kumari&apos;</span>,
             </div>
             <div className="pl-6">
-              role: <span className="text-emerald-300">&apos;Frontend Developer&apos;</span>,
+              role: <span className="text-emerald-300">&apos;Full-Stack Developer&apos;</span>,
             </div>
             <div className="pl-6">
               experience: <span className="text-amber-300">&apos;3+ Years&apos;</span>,
             </div>
             <div className="pl-6">
-              coreTech: [<span className="text-emerald-300">&apos;React&apos;</span>, <span className="text-emerald-300">&apos;Next.js&apos;</span>, <span className="text-emerald-300">&apos;Redux Toolkit&apos;</span>, <span className="text-emerald-300">&apos;Tailwind CSS&apos;</span>],
+              frontend: [<span className="text-emerald-300">&apos;React.js&apos;</span>, <span className="text-emerald-300">&apos;Next.js&apos;</span>, <span className="text-emerald-300">&apos;Redux Toolkit&apos;</span>, <span className="text-emerald-300">&apos;Tailwind CSS&apos;</span>],
+            </div>
+            <div className="pl-6">
+              backend: [<span className="text-emerald-300">&apos;Node.js&apos;</span>, <span className="text-emerald-300">&apos;Express.js&apos;</span>, <span className="text-emerald-300">&apos;REST APIs&apos;</span>, <span className="text-emerald-300">&apos;Firebase Auth&apos;</span>],
             </div>
             <div className="pl-6">
               location: <span className="text-emerald-300">&apos;Noida, India&apos;</span>,
             </div>
             <div className="pl-6 text-slate-500 font-light italic">
-              // Proven ability to translate designs into responsive, SEO-friendly platforms
+              // Skilled in REST API integration, reusable component architectures, authentication, &amp; admin dashboards
             </div>
             <div className="pl-6">
-              passions: [<span className="text-emerald-300">&apos;Interactive UI/UX&apos;</span>, <span className="text-emerald-300">&apos;Performance Optimization&apos;</span>, <span className="text-emerald-300">&apos;Clean Architecture&apos;</span>]
+              passions: [<span className="text-emerald-300">&apos;Full-Stack Architecture&apos;</span>, <span className="text-emerald-300">&apos;Performance Optimisation&apos;</span>, <span className="text-emerald-300">&apos;User-Centric UI/UX&apos;</span>]
             </div>
             <div>&#125;;</div>
           </div>

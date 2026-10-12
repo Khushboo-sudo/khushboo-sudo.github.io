@@ -37,19 +37,26 @@ export default function Footer() {
             <span className="font-bold tracking-wider text-white">KHUSHBOO</span>
           </div>
           <p className="text-slate-400 text-sm max-w-sm">
-            Building high-performance, visually stunning, and SEO-friendly user interfaces.
+            Full-Stack Developer building high-performance, scalable web applications using React.js, Next.js, Node.js, and Express.js.
           </p>
         </div>
 
         {/* Action Items */}
-        <div className="flex flex-col sm:flex-row gap-6 items-center">
+        <div className="flex flex-col sm:flex-row gap-4 items-center">
+          <a
+            href="/resume"
+            className="text-xs font-semibold text-amber-300 hover:text-amber-200 transition-colors bg-white/5 border border-amber-500/20 px-4 py-2 rounded-full hover:bg-amber-500/10"
+          >
+            Online Resume
+          </a>
+
           {/* Email Copy Card */}
           <div className="flex items-center gap-3 bg-[#100c18]/60 border border-amber-500/10 rounded-full px-4 py-2 text-sm text-slate-300">
             <Mail className="w-4 h-4 text-amber-400" />
             <span>{email}</span>
             <button
               onClick={handleCopyEmail}
-              className="p-1.5 hover:bg-white/10 rounded-full transition-colors text-slate-400 hover:text-white"
+              className="p-1.5 hover:bg-white/10 rounded-full transition-colors text-slate-400 hover:text-white cursor-pointer"
               title="Copy email to clipboard"
             >
               {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
@@ -63,6 +70,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-amber-500/50 hover:bg-amber-500/10 text-slate-400 hover:text-amber-400 transition-all duration-300"
+              aria-label="LinkedIn Profile"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />

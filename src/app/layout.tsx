@@ -14,21 +14,21 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Khushboo Kumari | Royal Portfolio | Senior Frontend Engineer",
-  description: "Senior Frontend Developer with 3+ years of experience specializing in React, Next.js, Redux, and Tailwind CSS. Crafting modern, high-performance, and visually stunning web interfaces.",
-  keywords: "Khushboo Kumari, Frontend Developer, React Developer, Next.js Developer, Web Designer, Portfolio, Software Engineer, Noida",
+  title: "Khushboo Kumari | Full-Stack Developer Portfolio",
+  description: "Full-Stack Developer with 3+ years of experience in React.js, Next.js, Node.js, and Express.js. Skilled in REST API integration, reusable component architectures, authentication, admin dashboards, and performance optimisation.",
+  keywords: "Khushboo Kumari, Full-Stack Developer, Frontend Developer, React Developer, Next.js Developer, Node.js, Express.js, Web Designer, Portfolio, Software Engineer, Noida",
   authors: [{ name: "Khushboo Kumari" }],
   creator: "Khushboo Kumari",
   openGraph: {
-    title: "Khushboo Kumari | Frontend Developer Portfolio",
-    description: "Stunning, high-performance, animated web platforms built with React.js and Next.js.",
+    title: "Khushboo Kumari | Full-Stack Developer Portfolio",
+    description: "Full-Stack Developer with 3+ years of experience building scalable web applications using React.js, Next.js, Node.js, and Express.js.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Khushboo Kumari | Frontend Developer Portfolio",
-    description: "Stunning, high-performance, animated web platforms built with React.js and Next.js.",
+    title: "Khushboo Kumari | Full-Stack Developer Portfolio",
+    description: "Full-Stack Developer with 3+ years of experience building scalable web applications using React.js, Next.js, Node.js, and Express.js.",
   },
 };
 
@@ -50,7 +50,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Khushboo Kumari",
-              "jobTitle": "Frontend Developer",
+              "jobTitle": "Full-Stack Developer",
               "url": "https://khushboo-portfolio.vercel.app",
               "address": {
                 "@type": "PostalAddress",

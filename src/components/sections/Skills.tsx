@@ -2,33 +2,39 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Cpu, Wrench, ShieldCheck } from "lucide-react";
+import { Cpu, Server, Wrench, ShieldCheck } from "lucide-react";
 import GradientText from "../ui/GradientText";
 import GlassCard from "../ui/GlassCard";
 
-const TECH_SKILLS = [
+const FRONTEND_SKILLS = [
   { name: "React.js", level: 95, color: "from-amber-300 to-amber-500" },
-  { name: "Next.js", level: 90, color: "from-amber-300 to-amber-500" },
-  { name: "Redux Toolkit", level: 85, color: "from-amber-300 to-amber-500" },
+  { name: "Next.js", level: 92, color: "from-amber-300 to-amber-500" },
+  { name: "JavaScript (ES6+)", level: 90, color: "from-amber-300 to-amber-500" },
+  { name: "Redux Toolkit", level: 88, color: "from-amber-300 to-amber-500" },
   { name: "Tailwind CSS", level: 95, color: "from-amber-300 to-amber-500" },
-  { name: "JavaScript (ES6+)", level: 92, color: "from-amber-300 to-amber-500" },
   { name: "HTML5 & CSS3", level: 95, color: "from-amber-300 to-amber-500" },
-  { name: "Bootstrap", level: 80, color: "from-amber-300 to-amber-500" },
+  { name: "Bootstrap", level: 85, color: "from-amber-300 to-amber-500" },
 ];
 
-const CONCEPT_SKILLS = [
-  { name: "REST API Integration", desc: "Connecting secure web services & database integrations." },
-  { name: "Responsive Web Design", desc: "Fluid layouts matching pixel-perfect screens and mobile devices." },
-  { name: "Firebase Authentication", desc: "Auth flows, Google Sign-In, and real-time database integrations." },
-  { name: "Google Maps API", desc: "Location finding, geolocation mapping, and booking systems." },
-  { name: "Git & GitHub", desc: "Version control, branching, PR reviews, and team deployment workflows." },
-  { name: "Figma translation", desc: "Extracting style configurations and wireframes into clean frontend code." },
-  { name: "Performance Optimization", desc: "Lazy loading, code splitting, asset optimizations, and Core Web Vitals." },
-  { name: "Cross-Browser Compatibility", desc: "Consistent layouts and experiences across Safari, Chrome, and Firefox." },
+const BACKEND_SKILLS = [
+  { name: "Node.js", level: 85, color: "from-amber-300 to-amber-500" },
+  { name: "Express.js", level: 85, color: "from-amber-300 to-amber-500" },
+  { name: "REST APIs Integration", level: 92, color: "from-amber-300 to-amber-500" },
+  { name: "Firebase Authentication", level: 88, color: "from-amber-300 to-amber-500" },
+  { name: "Google Maps API", level: 85, color: "from-amber-300 to-amber-500" },
+];
+
+const TOOLS_PRACTICES = [
+  { name: "Git & GitHub", desc: "Version control, feature branching, PR reviews, and team collaborative workflows." },
+  { name: "Figma UI/UX Translation", desc: "Extracting design specifications and creating pixel-perfect, responsive components." },
+  { name: "Performance Optimisation", desc: "Lazy loading, code splitting, memoization, and asset optimization for fast load times." },
+  { name: "Cross-Browser Compatibility", desc: "Consistent styling and flawless behavior across Chrome, Safari, Firefox, and Edge." },
+  { name: "Manual Testing & Debugging", desc: "Thorough testing, identifying edge cases, and ensuring zero-defect reliable releases." },
+  { name: "Reusable Component Architecture", desc: "Modular design systems and clean component structures for long-term scalability." },
 ];
 
 export default function Skills() {
-  const [activeTab, setActiveTab] = useState<"tech" | "tools">("tech");
+  const [activeTab, setActiveTab] = useState<"frontend" | "backend" | "tools">("frontend");
 
   return (
     <section id="skills" className="py-24 relative overflow-hidden bg-[#040206]">
@@ -44,7 +50,7 @@ export default function Skills() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white"
           >
-            My <GradientText gradient="from-amber-200 to-amber-500">Skills</GradientText>
+            Technical <GradientText gradient="from-amber-200 to-amber-500">Skills</GradientText>
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -54,36 +60,47 @@ export default function Skills() {
           />
 
           {/* Tab buttons */}
-          <div className="inline-flex bg-[#100c18]/60 border border-amber-500/10 p-1.5 rounded-full backdrop-blur-md">
+          <div className="inline-flex flex-wrap justify-center bg-[#100c18]/60 border border-amber-500/10 p-1.5 rounded-full backdrop-blur-md gap-1">
             <button
-              onClick={() => setActiveTab("tech")}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
-                activeTab === "tech"
+              onClick={() => setActiveTab("frontend")}
+              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                activeTab === "frontend"
                   ? "bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-500 text-black shadow-lg shadow-amber-500/20"
                   : "text-slate-400 hover:text-white"
               }`}
             >
               <Cpu className="w-4 h-4" />
-              Technologies
+              Frontend &amp; Core
+            </button>
+            <button
+              onClick={() => setActiveTab("backend")}
+              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                activeTab === "backend"
+                  ? "bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-500 text-black shadow-lg shadow-amber-500/20"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              <Server className="w-4 h-4" />
+              Backend &amp; APIs
             </button>
             <button
               onClick={() => setActiveTab("tools")}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
+              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
                 activeTab === "tools"
                   ? "bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-500 text-black shadow-lg shadow-amber-500/20"
                   : "text-slate-400 hover:text-white"
               }`}
             >
               <Wrench className="w-4 h-4" />
-              Tools & Concepts
+              Tools &amp; Practices
             </button>
           </div>
         </div>
 
-        {/* Tech Skills Tab */}
-        {activeTab === "tech" && (
+        {/* Frontend & Core Skills */}
+        {activeTab === "frontend" && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {TECH_SKILLS.map((skill, index) => (
+            {FRONTEND_SKILLS.map((skill, index) => (
               <GlassCard key={skill.name} delay={index * 0.05} className="p-6 border border-amber-500/10 hover:border-amber-500/20">
                 <div className="flex justify-between items-center mb-3">
                   <span className="font-bold text-white tracking-wide text-sm">{skill.name}</span>
@@ -91,7 +108,6 @@ export default function Skills() {
                     {skill.level}%
                   </span>
                 </div>
-                {/* Progress Bar Container */}
                 <div className="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden border border-white/5 relative">
                   <motion.div
                     initial={{ width: 0 }}
@@ -106,10 +122,35 @@ export default function Skills() {
           </div>
         )}
 
-        {/* Tools & Concepts Tab */}
+        {/* Backend & APIs */}
+        {activeTab === "backend" && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {BACKEND_SKILLS.map((skill, index) => (
+              <GlassCard key={skill.name} delay={index * 0.05} className="p-6 border border-amber-500/10 hover:border-amber-500/20">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="font-bold text-white tracking-wide text-sm">{skill.name}</span>
+                  <span className="text-[10px] font-bold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/15">
+                    {skill.level}%
+                  </span>
+                </div>
+                <div className="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden border border-white/5 relative">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.1 }}
+                    className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
+                  />
+                </div>
+              </GlassCard>
+            ))}
+          </div>
+        )}
+
+        {/* Tools & Practices Tab */}
         {activeTab === "tools" && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {CONCEPT_SKILLS.map((skill, index) => (
+            {TOOLS_PRACTICES.map((skill, index) => (
               <GlassCard
                 key={skill.name}
                 delay={index * 0.05}

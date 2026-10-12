@@ -49,7 +49,7 @@ export default function About() {
               transition={{ delay: 0.1 }}
               className="text-slate-300 leading-relaxed text-base font-light"
             >
-              I am a Frontend Developer with 3+ years of expertise in building high-performance web applications using React.js and Next.js. I specialize in designing modular, reusable component libraries, implementing robust state management via Redux Toolkit, and transforming complex design mocks into SEO-friendly responsive systems.
+              I am a Full-Stack Developer with 3+ years of experience building responsive and scalable web applications using React.js, Next.js, Node.js, and Express.js. I specialize in REST API integration, reusable component architectures, authentication, admin dashboards, and performance optimisation.
             </motion.p>
 
             <motion.p
@@ -59,7 +59,7 @@ export default function About() {
               transition={{ delay: 0.2 }}
               className="text-slate-400 leading-relaxed text-base font-light"
             >
-              My engineering approach prioritizes pixel-perfect designs, performance optimization, and cross-browser compatibility. I collaborate smoothly with product designers and backend engineers to integrate REST APIs and deliver robust frontend applications that enhance user experience.
+              My engineering approach prioritizes pixel-perfect designs, performance optimization, and cross-browser compatibility. Experienced in developing user-friendly applications following modern web practices and collaborating smoothly with designers and developers for seamless agile project delivery.
             </motion.p>
 
             <motion.div
@@ -67,15 +67,22 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="pt-4"
+              className="pt-4 flex flex-wrap gap-3 items-center"
             >
               <Button
-                href="/docs/Khushboo_Kumari_Resume.pdf"
+                href="/Khushboo_Kumari_Resume.pdf"
                 download="Khushboo_Kumari_Resume.pdf"
                 variant="primary"
                 className="inline-flex items-center gap-2"
               >
                 <FileText className="w-4 h-4" /> Download Resume (PDF)
+              </Button>
+              <Button
+                href="/resume"
+                variant="secondary"
+                className="inline-flex items-center gap-2 border-amber-500/20 text-amber-200 hover:text-white"
+              >
+                View Online Resume
               </Button>
             </motion.div>
           </div>
@@ -108,7 +115,7 @@ export default function About() {
               </div>
               <div>
                 <h4 className="text-lg font-bold text-white mb-1">Maharshi Dayanand University</h4>
-                <p className="text-slate-400 text-xs tracking-wider font-semibold">GRADUATION | ROHTAK, HARYANA (2015 - 2018)</p>
+                <p className="text-slate-400 text-xs tracking-wider font-semibold">GRADUATION | ROHTAK, HARYANA (01/2018)</p>
               </div>
             </GlassCard>
           </div>

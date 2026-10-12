@@ -14,11 +14,13 @@ const PROJECTS_DATA = [
     title: "Pick a Pro",
     subtitle: "Professional Home Services Platform",
     category: "Full Stack",
-    desc: "A complete service marketplace ecosystem including a customer booking portal and admin panel dashboard.",
+    desc: "Complete service marketplace ecosystem featuring customer booking portal, service provider onboarding, and full admin dashboard.",
     tech: ["React.js", "Next.js", "Redux Toolkit", "Firebase Auth", "Google Maps API"],
     bullets: [
-      "Built service booking, provider onboarding, and operational workflows.",
-      "Implemented role-based access controls and real-time push notifications."
+      "Developed service marketplace ecosystem including customer web portal and full admin dashboard.",
+      "Built responsive flows for service booking, provider onboarding, authentication, and operations.",
+      "Implemented Firebase Authentication for role access and Google Maps API for location bookings.",
+      "Added Firebase push notifications, live form validation, lazy loading, and analytics dashboards."
     ],
     mockup: "booking",
     demo: "https://pick-a-pro.vercel.app",
@@ -27,47 +29,48 @@ const PROJECTS_DATA = [
   {
     id: "grasberg",
     title: "Grasberg International",
-    subtitle: "Forex Business CRM Platform",
+    subtitle: "Forex CRM Platform",
     category: "CRM & Web",
-    desc: "A robust corporate website combined with a role-based CRM dashboard integrating trading metrics.",
-    tech: ["Next.js", "Tailwind CSS", "REST API", "MT5 APIs", "Charts.js"],
+    desc: "Frontend for an international forex platform combining an informational website with a role-based CRM.",
+    tech: ["Next.js", "Tailwind CSS", "REST APIs", "MetaTrader 5 (MT5)"],
     bullets: [
-      "Developed client-side portals for User, Partner, Super Admin, and Sub Admin roles.",
-      "Integrated secure MetaTrader 5 APIs for real-time trade monitoring."
+      "Built frontend for a forex platform combining an informational website with a role-based CRM using Next.js.",
+      "Delivered SEO-friendly website pages and modules for User, Partner, Super Admin, and Sub Admin roles.",
+      "Integrated REST APIs and worked with MetaTrader 5 (MT5) backend APIs for trading workflows."
     ],
     mockup: "chart",
     demo: "https://grasberg-international.com",
     github: "https://github.com/Khushboo-sudo/grasberg-crm"
   },
   {
-    id: "spods",
-    title: "Spods Technologies Website",
-    subtitle: "Modern Corporate Web Platform",
-    category: "CRM & Web",
-    desc: "Corporate showcase platform optimized for maximum SEO ranking, client onboarding, and speed performance.",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "SEO Best Practices"],
-    bullets: [
-      "Designed and coded modern SEO-friendly layouts yielding top performance scores.",
-      "Enhanced user conversion metrics via interactive services grids."
-    ],
-    mockup: "landing",
-    demo: "https://spods.co",
-    github: "https://github.com/Khushboo-sudo/spods-technologies"
-  },
-  {
     id: "nobiy",
     title: "NOBIY",
-    subtitle: "E-Commerce Clothing App",
+    subtitle: "E-Commerce Clothing Platform",
     category: "E-Commerce",
-    desc: "A sleek fashion store catalog with dynamic categorization, responsive shopping cart, and custom checkout forms.",
-    tech: ["React", "Redux Toolkit", "Tailwind CSS", "Figma Prototype"],
+    desc: "Modern fashion e-commerce storefront featuring real-time category filtering, cart management, and seamless authentication.",
+    tech: ["React", "Redux Toolkit", "Tailwind CSS", "Figma"],
     bullets: [
-      "Engineered flexible client-side cart handling with persistent caching.",
-      "Designed UI wireframes in Figma and conducted user feedback tests."
+      "Developed e-commerce platform with dynamic homepage, category filters, cart, and authentication.",
+      "Designed UI prototypes in Figma and conducted manual testing for usability and quality."
     ],
     mockup: "shop",
     demo: "https://nobiy.vercel.app",
     github: "https://github.com/Khushboo-sudo/nobiy-ecommerce"
+  },
+  {
+    id: "spods",
+    title: "Spods Technologies Website",
+    subtitle: "Enterprise Corporate Web Platform",
+    category: "CRM & Web",
+    desc: "Corporate showcase platform built at Spods Technologies, optimized for maximum SEO ranking, client onboarding, and speed performance.",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "REST APIs"],
+    bullets: [
+      "Designed and coded modern SEO-friendly layouts yielding top performance scores.",
+      "Integrated REST APIs and dynamic frontend features for operational management."
+    ],
+    mockup: "landing",
+    demo: "https://spods.co",
+    github: "https://github.com/Khushboo-sudo/spods-technologies"
   }
 ];
 

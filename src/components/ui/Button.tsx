@@ -37,9 +37,13 @@ export default function Button({
   };
 
   if (href) {
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+    const resolvedHref =
+      href.startsWith("/") && !href.startsWith("//") ? `${basePath}${href}` : href;
+
     return (
       <a
-        href={href}
+        href={resolvedHref}
         download={download}
         onClick={onClick}
         className={`${baseStyles} ${variants[variant]} ${className}`}
