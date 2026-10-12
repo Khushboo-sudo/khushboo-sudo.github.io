@@ -364,28 +364,65 @@ export default function ResumeView({ isModal = false, onClose }: ResumeViewProps
             Key Projects
           </h2>
 
-          {/* Pick a Pro */}
+          {/* Pick A Pro */}
           <div className="mb-2 break-inside-avoid">
             <div className="flex justify-between items-baseline mb-0.5">
               <span className="text-[13px] font-bold text-[#0f172a]">
-                Pick a Pro – Professional Home Services Platform
+                Pick A Pro – On-Demand Marketplace Ecosystem
               </span>
             </div>
             <div className="font-mono text-[10px] text-[#0369a1] bg-[#f0f9ff] border border-[#bae6fd] px-1.5 py-0.5 rounded inline-block mb-1">
-              React.js · Next.js · Redux Toolkit · Firebase Authentication · Google Maps API
+              React.js · Next.js · React Native · Redux Toolkit · Firebase Auth &amp; FCM · Google Maps API
             </div>
             <ul className="list-none pl-0 flex flex-col gap-0.5">
               <li className="text-[11px] text-[#334155] pl-3.5 relative leading-[1.42] before:content-['•'] before:absolute before:left-0.5 before:text-[#1d4ed8]">
-                Developed service marketplace ecosystem including customer web portal and full admin dashboard.
+                Developed comprehensive marketplace across web portal, cross-platform mobile apps, partner app, and admin dashboard.
               </li>
               <li className="text-[11px] text-[#334155] pl-3.5 relative leading-[1.42] before:content-['•'] before:absolute before:left-0.5 before:text-[#1d4ed8]">
-                Built responsive flows for service booking, provider onboarding, authentication, and operations.
+                Integrated Google Maps Geolocation &amp; Places API for automated proximity dispatch, live provider tracking, and dynamic pricing.
               </li>
               <li className="text-[11px] text-[#334155] pl-3.5 relative leading-[1.42] before:content-['•'] before:absolute before:left-0.5 before:text-[#1d4ed8]">
-                Implemented <strong className="font-semibold text-[#0f172a]">Firebase Authentication</strong> for role access and <strong className="font-semibold text-[#0f172a]">Google Maps API</strong> for location bookings.
+                Implemented role-based authentication via Firebase Auth and push notification queues using Firebase Cloud Messaging (FCM).
+              </li>
+            </ul>
+          </div>
+
+          {/* PropertyWorks */}
+          <div className="mb-2 break-inside-avoid">
+            <div className="flex justify-between items-baseline mb-0.5">
+              <span className="text-[13px] font-bold text-[#0f172a]">
+                PropertyWorks – Real Estate Intelligence &amp; Advisory Platform
+              </span>
+            </div>
+            <div className="font-mono text-[10px] text-[#0369a1] bg-[#f0f9ff] border border-[#bae6fd] px-1.5 py-0.5 rounded inline-block mb-1">
+              React.js · Next.js · TypeScript · Tailwind CSS · Node.js · REST APIs · SEO
+            </div>
+            <ul className="list-none pl-0 flex flex-col gap-0.5">
+              <li className="text-[11px] text-[#334155] pl-3.5 relative leading-[1.42] before:content-['•'] before:absolute before:left-0.5 before:text-[#1d4ed8]">
+                Built end-to-end advisory platform and dedicated Admin Panel for property listings, lead management, and dynamic blog engine.
               </li>
               <li className="text-[11px] text-[#334155] pl-3.5 relative leading-[1.42] before:content-['•'] before:absolute before:left-0.5 before:text-[#1d4ed8]">
-                Added Firebase push notifications, live form validation, lazy loading, and analytics dashboards.
+                Engineered backend REST APIs, database schemas, OTP-based secure admin actions, and automated lead capture pipelines.
+              </li>
+            </ul>
+          </div>
+
+          {/* Memory Caravan */}
+          <div className="mb-2 break-inside-avoid">
+            <div className="flex justify-between items-baseline mb-0.5">
+              <span className="text-[13px] font-bold text-[#0f172a]">
+                Memory Caravan – QR-Based Digital Media &amp; Keepsake Platform
+              </span>
+            </div>
+            <div className="font-mono text-[10px] text-[#0369a1] bg-[#f0f9ff] border border-[#bae6fd] px-1.5 py-0.5 rounded inline-block mb-1">
+              Next.js · React · TypeScript · Supabase · Cloudflare R2 · Video Streaming · QR Routing
+            </div>
+            <ul className="list-none pl-0 flex flex-col gap-0.5">
+              <li className="text-[11px] text-[#334155] pl-3.5 relative leading-[1.42] before:content-['•'] before:absolute before:left-0.5 before:text-[#1d4ed8]">
+                Designed private video storage and streaming pipeline with Cloudflare R2, short-lived tokens, and HTTP Range streaming.
+              </li>
+              <li className="text-[11px] text-[#334155] pl-3.5 relative leading-[1.42] before:content-['•'] before:absolute before:left-0.5 before:text-[#1d4ed8]">
+                Engineered QR-based dynamic routing, Supabase database integrations, and fluid mobile-first user interfaces.
               </li>
             </ul>
           </div>
@@ -394,41 +431,38 @@ export default function ResumeView({ isModal = false, onClose }: ResumeViewProps
           <div className="mb-2 break-inside-avoid">
             <div className="flex justify-between items-baseline mb-0.5">
               <span className="text-[13px] font-bold text-[#0f172a]">
-                Grasberg International – Forex CRM
+                Grasberg International – Forex Platform &amp; Role-Based CRM
               </span>
             </div>
             <div className="font-mono text-[10px] text-[#0369a1] bg-[#f0f9ff] border border-[#bae6fd] px-1.5 py-0.5 rounded inline-block mb-1">
-              Next.js · Tailwind CSS · REST APIs · MetaTrader 5 (MT5)
+              Next.js · Tailwind CSS · REST APIs · MetaTrader 5 (MT5) · Role-Based CRM
             </div>
             <ul className="list-none pl-0 flex flex-col gap-0.5">
               <li className="text-[11px] text-[#334155] pl-3.5 relative leading-[1.42] before:content-['•'] before:absolute before:left-0.5 before:text-[#1d4ed8]">
-                Built frontend for a forex platform combining an informational website with a role-based CRM using <strong className="font-semibold text-[#0f172a]">Next.js</strong>.
+                Built frontend for a forex platform combining an informational website with a role-based CRM using Next.js.
               </li>
               <li className="text-[11px] text-[#334155] pl-3.5 relative leading-[1.42] before:content-['•'] before:absolute before:left-0.5 before:text-[#1d4ed8]">
-                Delivered SEO-friendly website pages and modules for User, Partner, Super Admin, and Sub Admin roles.
-              </li>
-              <li className="text-[11px] text-[#334155] pl-3.5 relative leading-[1.42] before:content-['•'] before:absolute before:left-0.5 before:text-[#1d4ed8]">
-                Integrated REST APIs and worked with <strong className="font-semibold text-[#0f172a]">MetaTrader 5 (MT5)</strong> backend APIs for trading workflows.
+                Delivered portal modules for User, Partner, Super Admin, and Sub Admin roles with MetaTrader 5 (MT5) backend API integration.
               </li>
             </ul>
           </div>
 
-          {/* NOBIY */}
+          {/* SPODS Technologies */}
           <div className="mb-1 break-inside-avoid">
             <div className="flex justify-between items-baseline mb-0.5">
               <span className="text-[13px] font-bold text-[#0f172a]">
-                NOBIY – E-Commerce Clothing Platform
+                SPODS Technologies – Corporate Brand &amp; Services Platform
               </span>
             </div>
             <div className="font-mono text-[10px] text-[#0369a1] bg-[#f0f9ff] border border-[#bae6fd] px-1.5 py-0.5 rounded inline-block mb-1">
-              React · Redux Toolkit · Tailwind CSS · Figma
+              React.js · Next.js · Tailwind CSS · TypeScript · REST APIs
             </div>
             <ul className="list-none pl-0 flex flex-col gap-0.5">
               <li className="text-[11px] text-[#334155] pl-3.5 relative leading-[1.42] before:content-['•'] before:absolute before:left-0.5 before:text-[#1d4ed8]">
-                Developed e-commerce platform with dynamic homepage, category filters, cart, and authentication.
+                Architected responsive corporate web platform optimized for fast loading, accessibility, and high SEO rankings.
               </li>
               <li className="text-[11px] text-[#334155] pl-3.5 relative leading-[1.42] before:content-['•'] before:absolute before:left-0.5 before:text-[#1d4ed8]">
-                Designed UI prototypes in <strong className="font-semibold text-[#0f172a]">Figma</strong> and conducted manual testing for usability and quality.
+                Integrated REST APIs and dynamic service grids for enterprise client inquiries and operational workflows.
               </li>
             </ul>
           </div>

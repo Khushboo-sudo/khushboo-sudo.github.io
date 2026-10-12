@@ -2,74 +2,100 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Layers, ArrowUpRight, TrendingUp, Sparkles, ShoppingBag, Globe } from "lucide-react";
+import { Layers, ArrowUpRight, Globe, ExternalLink } from "lucide-react";
+import Image from "next/image";
 import GradientText from "../ui/GradientText";
 import GlassCard from "../ui/GlassCard";
 
-const CATEGORIES = ["All", "Full Stack", "CRM & Web", "E-Commerce"];
+const CATEGORIES = ["All", "Full Stack", "Platforms & SaaS", "Enterprise & CRM"];
 
 const PROJECTS_DATA = [
   {
     id: "pick-a-pro",
-    title: "Pick a Pro",
-    subtitle: "Professional Home Services Platform",
+    title: "Pick A Pro",
+    subtitle: "On-Demand Marketplace Ecosystem",
     category: "Full Stack",
-    desc: "Complete service marketplace ecosystem featuring customer booking portal, service provider onboarding, and full admin dashboard.",
-    tech: ["React.js", "Next.js", "Redux Toolkit", "Firebase Auth", "Google Maps API"],
+    desc: "End-to-end on-demand service marketplace connecting verified home service professionals with customers in real-time. Engineered 4 integrated production applications: Customer Web Portal, Cross-Platform Mobile Apps (iOS & Android), Partner Service App, and an Enterprise Admin Operations Dashboard.",
+    tech: ["React.js", "Next.js", "React Native", "Redux Toolkit", "Node.js", "Firebase Auth & FCM", "Google Maps API"],
     bullets: [
-      "Developed service marketplace ecosystem including customer web portal and full admin dashboard.",
-      "Built responsive flows for service booking, provider onboarding, authentication, and operations.",
-      "Implemented Firebase Authentication for role access and Google Maps API for location bookings.",
-      "Added Firebase push notifications, live form validation, lazy loading, and analytics dashboards."
+      "Engineered cross-platform mobile apps and web frontend using React.js, Next.js, and React Native with shared modular component libraries.",
+      "Implemented secure multi-tier role-based authentication (RBAC) via Firebase Auth for Customers, Service Providers, and Operations Admins.",
+      "Integrated Google Maps Geolocation & Places API for automated proximity dispatch, live provider tracking, and dynamic pricing.",
+      "Leveraged Redux Toolkit for centralized global state and Firebase Cloud Messaging (FCM) for real-time booking push notifications."
     ],
-    mockup: "booking",
-    demo: "https://pick-a-pro.vercel.app",
+    image: "/projects/pick-a-pro/desktop.webp",
+    logo: "/logos/projects/pickapro.png",
+    demo: "https://pickapro.co.nz/",
     github: "https://github.com/Khushboo-sudo/pick-a-pro"
+  },
+  {
+    id: "propertyworks",
+    title: "PropertyWorks",
+    subtitle: "Real Estate Intelligence & Advisory Platform",
+    category: "Platforms & SaaS",
+    desc: "Full-stack real estate intelligence and advisory platform engineered with a dedicated Admin Panel for managing property projects, listings, leads, blogs, and platform content. Designed scalable frontend and backend architecture, integrated secure REST APIs, and built responsive user experiences.",
+    tech: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "REST APIs", "Lead Management", "SEO"],
+    bullets: [
+      "Developed end-to-end real estate portal and dedicated Admin Panel for managing property projects, listings, leads, and Knowledge Center blogs.",
+      "Built responsive, reusable frontend components using React.js, Next.js, Tailwind CSS, and TypeScript with mobile-first performance.",
+      "Engineered backend REST APIs, database schemas, OTP-based secure admin actions, and automated lead capture pipelines.",
+      "Implemented programmatic SEO optimization, fast project directory filters, and end-to-end production deployment workflows."
+    ],
+    image: "/projects/propertyworks/desktop.webp",
+    logo: "/logos/projects/propertyworks.png",
+    demo: "https://propertyworks.in/",
+    github: "https://github.com/Khushboo-sudo/propertyworks"
+  },
+  {
+    id: "memory-caravan",
+    title: "Memory Caravan",
+    subtitle: "QR-Based Digital Media & Keepsake Platform",
+    category: "Platforms & SaaS",
+    desc: "End-to-end QR-based digital media platform allowing users to scan unique QR codes and securely access personalized photo and video keepsakes. Designed a private video storage and streaming architecture using Cloudflare R2, short-lived playback tokens, and HTTP Range-based streaming without exposing storage objects.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Cloudflare R2", "Video Streaming", "QR Routing"],
+    bullets: [
+      "Engineered end-to-end QR-based media platform with dynamic routing, album previews, and secure media access mapping.",
+      "Designed private video storage and streaming pipeline with Cloudflare R2, short-lived playback tokens, and HTTP Range-based chunk delivery.",
+      "Built backend APIs, database integration, and security controls with Supabase PostgreSQL, Next.js, and TypeScript.",
+      "Delivered fluid mobile-first UI with Tailwind CSS and handled complete storage management, media processing, and production deployment."
+    ],
+    image: "/projects/memory-caravan/desktop.webp",
+    demo: "https://memory-caravan.onrender.com/",
+    github: "https://github.com/Khushboo-sudo/memory-caravan"
   },
   {
     id: "grasberg",
     title: "Grasberg International",
-    subtitle: "Forex CRM Platform",
-    category: "CRM & Web",
-    desc: "Frontend for an international forex platform combining an informational website with a role-based CRM.",
-    tech: ["Next.js", "Tailwind CSS", "REST APIs", "MetaTrader 5 (MT5)"],
+    subtitle: "Forex Platform & Role-Based CRM",
+    category: "Enterprise & CRM",
+    desc: "Enterprise forex brokerage platform combining an informational brand portal with a comprehensive role-based CRM. Engineered dedicated modules for User, Partner, Super Admin, and Sub Admin roles, integrating REST APIs and MetaTrader 5 (MT5) backend trading workflows.",
+    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "REST APIs", "MetaTrader 5 (MT5)", "Role-Based CRM"],
     bullets: [
-      "Built frontend for a forex platform combining an informational website with a role-based CRM using Next.js.",
-      "Delivered SEO-friendly website pages and modules for User, Partner, Super Admin, and Sub Admin roles.",
-      "Integrated REST APIs and worked with MetaTrader 5 (MT5) backend APIs for trading workflows."
+      "Built frontend for a global forex platform combining an informational website with a multi-tenant role-based CRM using Next.js.",
+      "Delivered SEO-friendly website pages and dedicated portal modules for User, Partner, Super Admin, and Sub Admin roles.",
+      "Integrated REST APIs and worked with MetaTrader 5 (MT5) backend APIs for trading workflows and account management.",
+      "Implemented responsive UI with Tailwind CSS, role authorization controls, and high-performance server-rendered pages."
     ],
-    mockup: "chart",
-    demo: "https://grasberg-international.com",
+    image: "/projects/grasberg/desktop.webp",
+    logo: "/logos/projects/grasberg.png",
+    demo: "https://grasberginternational.com/",
     github: "https://github.com/Khushboo-sudo/grasberg-crm"
   },
   {
-    id: "nobiy",
-    title: "NOBIY",
-    subtitle: "E-Commerce Clothing Platform",
-    category: "E-Commerce",
-    desc: "Modern fashion e-commerce storefront featuring real-time category filtering, cart management, and seamless authentication.",
-    tech: ["React", "Redux Toolkit", "Tailwind CSS", "Figma"],
-    bullets: [
-      "Developed e-commerce platform with dynamic homepage, category filters, cart, and authentication.",
-      "Designed UI prototypes in Figma and conducted manual testing for usability and quality."
-    ],
-    mockup: "shop",
-    demo: "https://nobiy.vercel.app",
-    github: "https://github.com/Khushboo-sudo/nobiy-ecommerce"
-  },
-  {
     id: "spods",
-    title: "Spods Technologies Website",
-    subtitle: "Enterprise Corporate Web Platform",
-    category: "CRM & Web",
-    desc: "Corporate showcase platform built at Spods Technologies, optimized for maximum SEO ranking, client onboarding, and speed performance.",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "REST APIs"],
+    title: "SPODS Technologies",
+    subtitle: "Corporate Brand & Services Platform",
+    category: "Enterprise & CRM",
+    desc: "Official corporate website and services platform for SPODS Technologies. Built to serve as the primary digital touchpoint for clients, showcasing enterprise capabilities, core services, and contact channels.",
+    tech: ["React.js", "Next.js", "Tailwind CSS", "TypeScript", "Framer Motion", "REST APIs"],
     bullets: [
-      "Designed and coded modern SEO-friendly layouts yielding top performance scores.",
-      "Integrated REST APIs and dynamic frontend features for operational management."
+      "Architected a responsive, modern corporate web presence with optimized performance and accessibility.",
+      "Implemented streamlined navigation to highlight core services like Web/Mobile Development and AI Integration.",
+      "Ensured rapid page loads and high SEO rankings through static generation and optimized media assets."
     ],
-    mockup: "landing",
-    demo: "https://spods.co",
+    image: "/projects/spods/desktop.webp",
+    logo: "/logos/spods.png",
+    demo: "https://www.spodstechnologies.com/",
     github: "https://github.com/Khushboo-sudo/spods-technologies"
   }
 ];
@@ -81,134 +107,6 @@ export default function Projects() {
     if (activeCategory === "All") return true;
     return project.category === activeCategory;
   });
-
-  const renderMockup = (type: string) => {
-    switch (type) {
-      case "booking":
-        return (
-          <div className="w-full h-44 bg-gradient-to-br from-amber-950/25 to-slate-900 border-b border-amber-500/10 relative p-4 flex flex-col justify-between overflow-hidden">
-            {/* Ambient glows */}
-            <div className="absolute -top-10 -right-10 w-24 h-24 bg-amber-500/15 rounded-full blur-xl" />
-            
-            {/* Booking Card UI */}
-            <div className="flex justify-between items-center bg-white/5 border border-white/10 rounded-lg p-2.5 backdrop-blur-md">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-[10px] font-bold text-black">SP</div>
-                <div>
-                  <div className="text-[10px] font-bold text-white">Plumbing Repair</div>
-                  <div className="text-[8px] text-slate-400 font-light">Scheduled for Today</div>
-                </div>
-              </div>
-              <span className="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full">$85.00</span>
-            </div>
-
-            {/* Steps indicator */}
-            <div className="flex gap-2">
-              <div className="flex-1 h-1 bg-amber-500 rounded-full" />
-              <div className="flex-1 h-1 bg-amber-500 rounded-full" />
-              <div className="flex-1 h-1 bg-white/10 rounded-full" />
-            </div>
-
-            <div className="flex justify-between items-center text-[8px] text-amber-500/70 font-mono">
-              <span>STATUS: IN_PROGRESS</span>
-              <span>PROVIDER: ASSIGNED</span>
-            </div>
-          </div>
-        );
-      case "chart":
-        return (
-          <div className="w-full h-44 bg-gradient-to-br from-slate-950 to-[#1e1508] border-b border-amber-500/10 relative p-4 flex flex-col justify-between overflow-hidden">
-            <div className="absolute -bottom-10 -left-10 w-28 h-28 bg-amber-500/10 rounded-full blur-xl" />
-            
-            {/* Chart Header */}
-            <div className="flex items-center justify-between text-[10px]">
-              <span className="text-slate-400 font-medium flex items-center gap-1">
-                <TrendingUp className="w-3.5 h-3.5 text-amber-400" /> EUR/USD Live
-              </span>
-              <span className="text-amber-400 font-semibold">+1.42%</span>
-            </div>
-
-            {/* Drawing a clean chart representation using SVG */}
-            <svg className="w-full h-16 text-amber-400 drop-shadow-[0_0_8px_rgba(245,158,11,0.4)]" viewBox="0 0 100 30" fill="none">
-              <path
-                d="M0,25 Q15,10 30,18 T60,5 T90,12 T100,2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <path
-                d="M0,25 Q15,10 30,18 T60,5 T90,12 T100,2 L100,30 L0,30 Z"
-                fill="url(#chart-glow)"
-                opacity="0.15"
-              />
-              <defs>
-                <linearGradient id="chart-glow" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#f59e0b" />
-                  <stop offset="100%" stopColor="#f59e0b" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-            </svg>
-
-            {/* Mini User Tag */}
-            <div className="flex gap-2">
-              <span className="text-[8px] bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-white/5 font-mono">Super Admin</span>
-              <span className="text-[8px] bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-white/5 font-mono">Partner ID: #1042</span>
-            </div>
-          </div>
-        );
-      case "landing":
-        return (
-          <div className="w-full h-44 bg-gradient-to-br from-[#1b1405] to-[#04020c] border-b border-amber-500/10 relative p-4 flex flex-col justify-between overflow-hidden">
-            <div className="absolute -top-12 -left-12 w-28 h-28 bg-amber-500/15 rounded-full blur-xl animate-pulse-slow" />
-            
-            {/* Website Hero Mockup */}
-            <div className="flex flex-col gap-2 pt-2">
-              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-[7px] text-amber-300 w-fit">
-                <Sparkles className="w-2.5 h-2.5" /> Next-Gen Enterprise solutions
-              </div>
-              <h5 className="text-[12px] font-bold text-white tracking-tight leading-tight">Spods Innovative Tech</h5>
-              <div className="w-2/3 h-1.5 bg-slate-800 rounded-full" />
-            </div>
-
-            {/* Browser frame decoration */}
-            <div className="flex justify-between items-center border-t border-white/5 pt-2 text-[8px] text-slate-500 font-mono">
-              <span className="flex items-center gap-1"><Globe className="w-3 h-3 text-amber-400" /> spods.co</span>
-              <span>100% SEO</span>
-            </div>
-          </div>
-        );
-      case "shop":
-        return (
-          <div className="w-full h-44 bg-gradient-to-br from-[#241505] to-slate-950 border-b border-amber-500/10 relative p-4 flex flex-col justify-between overflow-hidden">
-            <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-amber-500/10 rounded-full blur-xl" />
-
-            {/* Shopping interface details */}
-            <div className="flex justify-between items-start">
-              <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest font-mono">NOBIY STORE</span>
-              <div className="p-1 bg-white/5 rounded-full border border-white/10 text-amber-400">
-                <ShoppingBag className="w-3.5 h-3.5" />
-              </div>
-            </div>
-
-            {/* Clothes grid mockup */}
-            <div className="grid grid-cols-2 gap-2">
-              <div className="bg-white/5 border border-white/10 rounded p-1.5 flex flex-col gap-1">
-                <div className="h-6 bg-slate-900 rounded" />
-                <div className="h-1 bg-slate-600 rounded w-2/3" />
-                <div className="h-1 bg-slate-700 rounded w-1/2" />
-              </div>
-              <div className="bg-white/5 border border-white/10 rounded p-1.5 flex flex-col gap-1">
-                <div className="h-6 bg-slate-900 rounded" />
-                <div className="h-1 bg-slate-600 rounded w-2/3" />
-                <div className="h-1 bg-slate-700 rounded w-1/2" />
-              </div>
-            </div>
-          </div>
-        );
-      default:
-        return null;
-    }
-  };
 
   return (
     <section id="projects" className="py-24 relative overflow-hidden bg-[#03050c]">
@@ -232,14 +130,14 @@ export default function Projects() {
           />
 
           {/* Filters */}
-          <div className="flex flex-wrap justify-center gap-2 bg-[#100c18]/60 border border-amber-500/10 p-1 rounded-full w-fit mx-auto backdrop-blur-md">
+          <div className="flex flex-wrap justify-center gap-2 bg-[#100c18]/60 border border-amber-500/10 p-1.5 rounded-full w-fit mx-auto backdrop-blur-md">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
                   activeCategory === cat
-                    ? "bg-amber-500 text-black shadow-lg shadow-amber-500/20"
+                    ? "bg-amber-500 text-black shadow-lg shadow-amber-500/20 font-bold"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -264,10 +162,36 @@ export default function Projects() {
               >
                 <GlassCard
                   hoverEffect={true}
-                  className="flex flex-col w-full !p-0 border border-amber-500/10 overflow-hidden hover:shadow-[0_15px_40px_-15px_rgba(245,158,11,0.25)] hover:border-amber-500/25 transition-all duration-300"
+                  className="flex flex-col w-full !p-0 border border-amber-500/10 overflow-hidden hover:shadow-[0_15px_40px_-15px_rgba(245,158,11,0.25)] hover:border-amber-500/25 transition-all duration-300 group"
                 >
-                  {/* Web device vector mockup representation */}
-                  {renderMockup(project.mockup)}
+                  {/* Real Project Desktop Mockup Image */}
+                  <div className="relative w-full h-52 sm:h-56 overflow-hidden bg-slate-950/90 border-b border-amber-500/10">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0c0914] via-transparent to-black/30 pointer-events-none" />
+
+                    {/* Project Logo badge if available */}
+                    {project.logo && (
+                      <div className="absolute top-3 left-3 bg-[#0d0a14]/90 border border-amber-500/25 backdrop-blur-md rounded-xl p-2 shadow-lg flex items-center justify-center">
+                        <Image
+                          src={project.logo}
+                          alt={`${project.title} logo`}
+                          width={26}
+                          height={26}
+                          className="object-contain"
+                        />
+                      </div>
+                    )}
+
+                    <div className="absolute bottom-3 right-3 text-[10px] font-mono bg-black/75 text-amber-300 border border-amber-500/20 px-2 py-0.5 rounded backdrop-blur-md shadow">
+                      Live Production
+                    </div>
+                  </div>
 
                   {/* Details */}
                   <div className="p-6 flex-1 flex flex-col justify-between">
@@ -280,7 +204,7 @@ export default function Projects() {
                           <Layers className="w-3.5 h-3.5" /> Specs
                         </span>
                       </div>
-                      
+
                       <a href={project.demo} target="_blank" rel="noopener noreferrer" className="group/title block">
                         <h4 className="text-xl font-bold text-white tracking-wide mb-1 flex items-center gap-2 group-hover/title:text-amber-300 transition-colors">
                           {project.title}
@@ -288,9 +212,9 @@ export default function Projects() {
                         </h4>
                       </a>
                       <p className="text-slate-400 text-xs font-semibold mb-3 italic">{project.subtitle}</p>
-                      
+
                       <p className="text-slate-300 text-sm font-light leading-relaxed mb-4">{project.desc}</p>
-                      
+
                       <ul className="mb-6 space-y-1.5 text-slate-400 text-xs font-light">
                         {project.bullets.map((b, i) => (
                           <li key={i} className="flex gap-2 items-start">
@@ -313,7 +237,7 @@ export default function Projects() {
                           </span>
                         ))}
                       </div>
-                      
+
                       <div className="flex gap-3 pt-2">
                         <a
                           href={project.demo}
@@ -329,9 +253,7 @@ export default function Projects() {
                           rel="noopener noreferrer"
                           className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-semibold text-slate-300 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 hover:text-white hover:scale-[1.02] transition-all duration-300"
                         >
-                          <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                          </svg> Source Code
+                          <ExternalLink className="w-3.5 h-3.5" /> Source Code
                         </a>
                       </div>
                     </div>
