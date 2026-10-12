@@ -1,11 +1,35 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, Printer, Download, MapPin, Phone, Mail, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Printer, Download, MapPin, Phone, Mail, X } from "lucide-react";
 
-export default function ResumeView() {
+interface ResumeViewProps {
+  isModal?: boolean;
+  onClose?: () => void;
+}
+
+export default function ResumeView({ isModal = false, onClose }: ResumeViewProps) {
   const [activeFont, setActiveFont] = useState<"Inter" | "Plus Jakarta Sans" | "Outfit">("Inter");
+
+  useEffect(() => {
+    if (!isModal) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && onClose) {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    // Lock body scroll when modal is open
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "auto";
+    };
+  }, [isModal, onClose]);
 
   const handlePrint = () => {
     window.print();
@@ -15,37 +39,47 @@ export default function ResumeView() {
     fontFamily: `'${activeFont}', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`,
   };
 
-  return (
-    <div className="min-h-screen bg-[#f1f5f9] text-[#1e293b] py-6 px-4 print:p-0 print:bg-white">
+  const content = (
+    <div className="w-full max-w-[860px] mx-auto my-auto relative z-10">
       {/* Top Action Toolbar (Hidden during Print) */}
-      <div className="max-w-[840px] mx-auto mb-4 bg-white border border-slate-200 rounded-xl p-3 px-4 shadow-sm flex flex-wrap items-center justify-between gap-3 print:hidden">
+      <div className="mb-4 bg-[#0d0a14]/90 border border-amber-500/20 backdrop-blur-xl rounded-2xl p-3 sm:px-5 shadow-2xl flex flex-wrap items-center justify-between gap-3 print:hidden">
         <div className="flex items-center gap-3">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-blue-600 transition-colors bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to Portfolio
-          </Link>
-          <div className="hidden sm:flex items-center gap-1.5 text-xs text-slate-500 font-medium">
-            <span className="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded-full text-[11px] border border-emerald-200">
+          {isModal ? (
+            <button
+              onClick={onClose}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg border border-white/10 cursor-pointer"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" /> Close View
+            </button>
+          ) : (
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg border border-white/10"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" /> Back to Portfolio
+            </Link>
+          )}
+
+          <div className="hidden sm:flex items-center gap-1.5 text-xs text-slate-400 font-medium">
+            <span className="bg-emerald-500/15 text-emerald-300 font-bold px-2 py-0.5 rounded-full text-[11px] border border-emerald-500/30">
               ATS-Standard
             </span>
-            <span>1-Page Format</span>
+            <span>1-Page Professional</span>
           </div>
         </div>
 
         <div className="flex items-center gap-3 flex-wrap">
           {/* Font Selector */}
-          <div className="flex items-center gap-1.5 text-xs text-slate-500">
-            <span className="font-medium">Font:</span>
+          <div className="flex items-center gap-1.5 text-xs text-slate-400">
+            <span className="font-medium hidden sm:inline">Font:</span>
             {(["Inter", "Plus Jakarta Sans", "Outfit"] as const).map((font) => (
               <button
                 key={font}
                 onClick={() => setActiveFont(font)}
                 className={`px-2.5 py-1 text-xs font-semibold rounded-md border transition-all cursor-pointer ${
                   activeFont === font
-                    ? "bg-blue-700 text-white border-blue-700 shadow-sm"
-                    : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
+                    ? "bg-amber-500 text-black border-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.3)] font-bold"
+                    : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
                 }`}
               >
                 {font === "Plus Jakarta Sans" ? "Jakarta" : font}
@@ -58,24 +92,34 @@ export default function ResumeView() {
             <a
               href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Khushboo_Kumari_Resume.pdf`}
               download="Khushboo_Kumari_Resume.pdf"
-              className="inline-flex items-center gap-1.5 bg-slate-800 hover:bg-slate-900 text-white text-xs font-semibold px-3.5 py-1.5 rounded-md shadow-sm transition-all"
+              className="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-3.5 py-1.5 rounded-lg border border-white/10 transition-all shadow-sm"
             >
               <Download className="w-3.5 h-3.5" /> Download PDF
             </a>
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 bg-blue-700 hover:bg-blue-800 text-white text-xs font-semibold px-3.5 py-1.5 rounded-md shadow-sm transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-black text-xs font-bold px-3.5 py-1.5 rounded-lg shadow-[0_0_15px_rgba(245,158,11,0.25)] transition-all cursor-pointer"
             >
-              <Printer className="w-3.5 h-3.5" /> Print / Save PDF
+              <Printer className="w-3.5 h-3.5" /> Print / Save
             </button>
+
+            {isModal && onClose && (
+              <button
+                onClick={onClose}
+                className="p-1.5 rounded-lg bg-white/5 hover:bg-white/15 text-slate-400 hover:text-white transition-colors cursor-pointer border border-white/10 ml-1"
+                aria-label="Close modal"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
           </div>
         </div>
       </div>
 
-      {/* Main Resume Sheet */}
+      {/* Main ATS Resume Document */}
       <main
         style={fontStyle}
-        className="resume-sheet max-w-[840px] mx-auto bg-white p-8 sm:p-10 border border-slate-200 rounded-lg shadow-sm print:p-0 print:border-none print:shadow-none print:max-w-none text-[11.5px] leading-[1.45] text-[#1e293b]"
+        className="resume-sheet bg-white p-8 sm:p-10 rounded-xl shadow-2xl border border-white/10 text-[11.5px] leading-[1.45] text-[#1e293b]"
       >
         {/* Header Section */}
         <header className="border-b-2 border-[#0f172a] pb-2 mb-2.5 flex justify-between items-end flex-wrap gap-3">
@@ -405,6 +449,32 @@ export default function ResumeView() {
           </div>
         </section>
       </main>
+    </div>
+  );
+
+  if (isModal) {
+    return (
+      <div className="fixed inset-0 z-[100] overflow-y-auto bg-[#040206]/90 backdrop-blur-2xl p-4 sm:p-6 md:p-8 flex items-start justify-center animate-fadeIn">
+        {/* Ambient Cosmic glow in modal background */}
+        <div className="fixed top-1/4 left-1/4 w-[35rem] h-[35rem] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="fixed bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none" />
+
+        {/* Backdrop click dismiss */}
+        <div className="fixed inset-0 -z-10" onClick={onClose} />
+
+        {content}
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-[#040206] text-[#f8fafc] py-8 px-4 relative overflow-hidden print:p-0 print:bg-white">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/4 left-1/4 w-[40rem] h-[40rem] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="cosmic-mesh" />
+
+      {content}
     </div>
   );
 }

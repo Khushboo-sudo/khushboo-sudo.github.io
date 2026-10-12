@@ -43,12 +43,12 @@ export default function Footer() {
 
         {/* Action Items */}
         <div className="flex flex-col sm:flex-row gap-4 items-center">
-          <a
-            href="/resume"
-            className="text-xs font-semibold text-amber-300 hover:text-amber-200 transition-colors bg-white/5 border border-amber-500/20 px-4 py-2 rounded-full hover:bg-amber-500/10"
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("open-resume"))}
+            className="text-xs font-semibold text-amber-300 hover:text-amber-200 transition-colors bg-white/5 border border-amber-500/20 px-4 py-2 rounded-full hover:bg-amber-500/10 cursor-pointer"
           >
             Online Resume
-          </a>
+          </button>
 
           {/* Email Copy Card */}
           <div className="flex items-center gap-3 bg-[#100c18]/60 border border-amber-500/10 rounded-full px-4 py-2 text-sm text-slate-300">

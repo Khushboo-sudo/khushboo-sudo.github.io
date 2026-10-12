@@ -78,9 +78,9 @@ export default function About() {
                 <FileText className="w-4 h-4" /> Download Resume (PDF)
               </Button>
               <Button
-                href="/resume"
+                onClick={() => window.dispatchEvent(new CustomEvent("open-resume"))}
                 variant="secondary"
-                className="inline-flex items-center gap-2 border-amber-500/20 text-amber-200 hover:text-white"
+                className="inline-flex items-center gap-2 border-amber-500/20 text-amber-200 hover:text-white cursor-pointer"
               >
                 View Online Resume
               </Button>

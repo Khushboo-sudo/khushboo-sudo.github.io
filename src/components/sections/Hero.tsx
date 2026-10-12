@@ -68,7 +68,11 @@ export default function Hero() {
           <Button href="/Khushboo_Kumari_Resume.pdf" download="Khushboo_Kumari_Resume.pdf" variant="secondary" className="w-full sm:w-auto px-7">
             Download Resume <ArrowUpRight className="w-4 h-4" />
           </Button>
-          <Button href="/resume" variant="secondary" className="w-full sm:w-auto px-7 border-amber-500/20 text-amber-200 hover:text-white">
+          <Button
+            onClick={() => window.dispatchEvent(new CustomEvent("open-resume"))}
+            variant="secondary"
+            className="w-full sm:w-auto px-7 border-amber-500/20 text-amber-200 hover:text-white cursor-pointer"
+          >
             Online CV <Sparkles className="w-4 h-4 text-amber-400" />
           </Button>
         </motion.div>

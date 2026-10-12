@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import Button from "../ui/Button";
 
 const NAV_ITEMS = [
@@ -13,7 +12,7 @@ const NAV_ITEMS = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Resume", href: "/resume" },
+  { label: "Resume", href: "#resume" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -35,8 +34,10 @@ export default function Navbar() {
         return;
       }
 
-      // Filter only section links that begin with '#'
-      const sectionLinks = NAV_ITEMS.filter((item) => item.href.startsWith("#"));
+      // Filter only section links that begin with '#' and exclude '#resume'
+      const sectionLinks = NAV_ITEMS.filter(
+        (item) => item.href.startsWith("#") && item.href !== "#resume"
+      );
       const scrollPosition = window.scrollY + 140;
 
       for (let i = sectionLinks.length - 1; i >= 0; i--) {
@@ -55,9 +56,16 @@ export default function Navbar() {
   }, []);
 
   const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
+    e: React.MouseEvent<HTMLElement>,
     href: string
   ) => {
+    if (href === "#resume") {
+      e.preventDefault();
+      window.dispatchEvent(new CustomEvent("open-resume"));
+      setMobileMenuOpen(false);
+      return;
+    }
+
     if (href.startsWith("#")) {
       e.preventDefault();
       const id = href.substring(1);
@@ -110,22 +118,22 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1.5 bg-[#100c18]/80 border border-amber-500/20 rounded-full px-3 py-1.5 backdrop-blur-2xl shadow-inner shadow-white/5">
           {NAV_ITEMS.map((item) => {
-            const isHash = item.href.startsWith("#");
-            const id = isHash ? item.href.substring(1) : "";
-            const isActive = isHash && activeSection === id;
-
-            if (!isHash) {
+            if (item.href === "#resume") {
               return (
-                <Link
+                <button
                   key={item.href}
-                  href={item.href}
-                  className="relative px-4 py-2 text-xs font-semibold text-amber-300 hover:text-white transition-all rounded-full flex items-center gap-1 hover:bg-amber-500/10"
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="relative px-3.5 py-1.5 text-xs font-semibold text-amber-300 hover:text-white transition-all rounded-full flex items-center gap-1.5 hover:bg-amber-500/15 cursor-pointer border border-amber-500/20"
                 >
                   <Sparkles className="w-3 h-3 text-amber-400" />
                   {item.label}
-                </Link>
+                </button>
               );
             }
+
+            const isHash = item.href.startsWith("#");
+            const id = isHash ? item.href.substring(1) : "";
+            const isActive = isHash && activeSection === id;
 
             return (
               <a
@@ -188,23 +196,22 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-2">
               {NAV_ITEMS.map((item) => {
-                const isHash = item.href.startsWith("#");
-                const id = isHash ? item.href.substring(1) : "";
-                const isActive = isHash && activeSection === id;
-
-                if (!isHash) {
+                if (item.href === "#resume") {
                   return (
-                    <Link
+                    <button
                       key={item.href}
-                      href={item.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="text-base font-semibold py-2.5 px-4 rounded-xl text-amber-300 hover:bg-amber-500/10 flex items-center justify-between border border-amber-500/20"
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className="text-base font-semibold py-2.5 px-4 rounded-xl text-amber-300 hover:bg-amber-500/10 flex items-center justify-between border border-amber-500/20 cursor-pointer w-full text-left"
                     >
                       <span>{item.label}</span>
                       <Sparkles className="w-4 h-4 text-amber-400" />
-                    </Link>
+                    </button>
                   );
                 }
+
+                const isHash = item.href.startsWith("#");
+                const id = isHash ? item.href.substring(1) : "";
+                const isActive = isHash && activeSection === id;
 
                 return (
                   <a
